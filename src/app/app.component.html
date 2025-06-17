@@ -237,14 +237,13 @@
           { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' }, -->
       <div class="pill-group">
         @for (item of [
-          { title: 'Explore the Docs', link: 'https://angular.dev' },
+          { title: 'Explore the Docs', link: '/devops' },
         ]; track item.title) {
           <a
             class="pill"
-            [href]="item.link"
-            target="_blank"
-            rel="noopener"
-          >
+            [routerLink]="item.link"
+            routerLinkActive="active"
+            >
             <span>{{ item.title }}</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
