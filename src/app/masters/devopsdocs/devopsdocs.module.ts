@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { DevopsdocsRoutingModule } from './devopsdocs-routing.module';
 import { DevopsdocsComponent } from './devopsdocs.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [DevopsdocsComponent],
   imports: [
     CommonModule,
-    DevopsdocsRoutingModule
+    DevopsdocsRoutingModule,
+    FormsModule
   ]
 })
 export class DevopsdocsModule { }

@@ -1,3 +1,9 @@
+<div class="container d-flex my-2 gap-2">
+  <button class="btn btn-primary" (click)="opencontent('D')">Devops</button>
+  <button class="btn btn-secondary" (click)="opencontent('N')">Nginix</button>
+</div>
+
+<div *ngIf="selectedTab === 'D'">
 <div class="container main-img d-flex justify-content-center">
   <img src="assets/images/devops.png" alt="">
 </div>
@@ -27,5 +33,34 @@
     <q>With DevOps, teams can release features faster, detect bugs earlier, and respond to customer needs more
       efficiently.</q>
   </p>
+
+</div>
+
+<div class="container mt-1">
+  <h3 class="question-style">2. Why did you choose DevOps?</h3>
+    <p>
+      I chose DevOps because it bridges the gap between development and operations,
+      allowing me to work across the entire software delivery lifecycle — from coding
+      and building to deploying and monitoring. I enjoy automation, problem-solving,
+      and improving efficiency, and DevOps gives me the tools and mindset to do that at scale.
+    </p>
+    <p>
+      It also aligns with my passion for continuous learning and working with modern tools like
+      Docker, Kubernetes, CI/CD pipelines, and cloud platforms. DevOps isn’t just about tools —
+      it's about culture, collaboration, and delivering value faster and more reliably, which
+      makes the work both challenging and rewarding.
+    </p>
+
+    <div class="optional">
+      <div class="tips-style">
+        🧩 <span class="tipscon">Optional Add-On (customizable):</span>
+      </div>
+      <p>
+        "Coming from a [developer/sysadmin/tester] background, I found DevOps a natural
+        evolution that allowed me to expand my impact by enabling automation,
+        better communication, and faster delivery."
+      </p>
+    </div>
+</div>
 
 </div>

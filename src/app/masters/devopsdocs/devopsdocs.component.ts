@@ -8,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class DevopsdocsComponent {
 
+  public selectedTab:any = 'D';
+
+  opencontent(page:any) {
+    alert(page)
+    this.selectedTab = page;
+  }
 }
