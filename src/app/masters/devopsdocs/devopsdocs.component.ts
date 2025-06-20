@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-devopsdocs',
@@ -6,10 +6,14 @@ import { Component } from '@angular/core';
   templateUrl: './devopsdocs.component.html',
   styleUrl: './devopsdocs.component.scss'
 })
-export class DevopsdocsComponent {
+export class DevopsdocsComponent implements OnInit {
+ 
 
   public selectedTab:any = 'D';
 
+   ngOnInit(): void {
+    this.selectedTab = 'D';
+  }
   opencontent(page:any) {
     this.selectedTab = page;
   }

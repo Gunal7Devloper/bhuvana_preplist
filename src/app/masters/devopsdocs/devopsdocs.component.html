@@ -2,7 +2,8 @@
   <button class="btn btn-primary" (click)="opencontent('D')">Devops</button>
   <button class="btn btn-secondary" (click)="opencontent('N')">Nginix</button>
 </div>
-<div>
+{{selectedTab === 'D'}}
+<div *ngIf="true">
 <div class="container main-img d-flex justify-content-center">
   <img src="assets/images/devops.png" alt="">
 </div>
@@ -63,3 +64,4 @@
 </div>
 
 </div>
+<div *ngIf="selectedTab !== 'D'"></div>
