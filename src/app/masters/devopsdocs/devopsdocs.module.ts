@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { DevopsdocsRoutingModule } from './devopsdocs-routing.module';
 import { DevopsdocsComponent } from './devopsdocs.component';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -12,6 +12,6 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     DevopsdocsRoutingModule,
     FormsModule
-  ]
+  ], exports: [DevopsdocsComponent]
 })
 export class DevopsdocsModule { }

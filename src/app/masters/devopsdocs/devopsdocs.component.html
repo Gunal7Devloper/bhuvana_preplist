@@ -1,43 +1,43 @@
 <div class="container d-flex my-2 gap-2">
   <div class="btn btn-primary" (click)="opencontent('D')">Devops</div>
   <div class="btn btn-secondary" (click)="opencontent('N')">Nginix</div>
+  <div class="btn btn-info" (click)="opencontent('G')">Generic</div>
 </div>
-{{selectedTab === 'D'}}
-<div *ngIf="true">
-<div class="container main-img d-flex justify-content-center">
-  <img src="assets/images/devops.png" alt="">
-</div>
-<div class="container mt-4">
-  <h3 class="question-style">1. What is DevOps?</h3>
-  <p>
-    <strong>DevOps</strong> is a set of practices, tools, and a cultural philosophy that aims to unify and
-    automate the work of software development (<strong>Dev</strong>) and IT operations (<strong>Ops</strong>).
-    The goal is to shorten the development lifecycle, deliver high-quality software continuously,
-    and improve collaboration between development and operations teams.
-  </p>
-  <p>It focuses on:</p>
-  <ul>
-    <li><strong>Continuous Integration and Continuous Delivery (CI/CD)</strong></li>
-    <li><strong>Automation of infrastructure and workflows</strong></li>
-    <li><strong>Monitoring and performance feedback</strong></li>
-    <li><strong>Collaboration and shared responsibilities</strong></li>
-  </ul>
-  <p>
-    DevOps promotes using tools like Git, Jenkins, Docker, Kubernetes, Ansible, and cloud platforms like
-    AWS or Azure to automate and streamline the software delivery process.
-  </p>
+<div *ngIf="selectedTab === 'D'">
+  <div class="container main-img d-flex justify-content-center">
+    <img src="assets/images/devops.png" alt="">
+  </div>
+  <div class="container mt-4">
+    <h3 class="question-style">1. What is DevOps?</h3>
+    <p>
+      <strong>DevOps</strong> is a set of practices, tools, and a cultural philosophy that aims to unify and
+      automate the work of software development (<strong>Dev</strong>) and IT operations (<strong>Ops</strong>).
+      The goal is to shorten the development lifecycle, deliver high-quality software continuously,
+      and improve collaboration between development and operations teams.
+    </p>
+    <p>It focuses on:</p>
+    <ul>
+      <li><strong>Continuous Integration and Continuous Delivery (CI/CD)</strong></li>
+      <li><strong>Automation of infrastructure and workflows</strong></li>
+      <li><strong>Monitoring and performance feedback</strong></li>
+      <li><strong>Collaboration and shared responsibilities</strong></li>
+    </ul>
+    <p>
+      DevOps promotes using tools like Git, Jenkins, Docker, Kubernetes, Ansible, and cloud platforms like
+      AWS or Azure to automate and streamline the software delivery process.
+    </p>
 
-  <p><span class="tips-style"><i class="fa-solid fa-thumbtack tips-icon"></i>
-      <span class="tipscon"> Bonus Tip: </span></span>
-    <em>If asked for real-world benefits, you can add:</em><br>
-    <q>With DevOps, teams can release features faster, detect bugs earlier, and respond to customer needs more
-      efficiently.</q>
-  </p>
+    <p><span class="tips-style"><i class="fa-solid fa-thumbtack tips-icon"></i>
+        <span class="tipscon"> Bonus Tip: </span></span>
+      <em>If asked for real-world benefits, you can add:</em><br>
+      <q>With DevOps, teams can release features faster, detect bugs earlier, and respond to customer needs more
+        efficiently.</q>
+    </p>
 
-</div>
+  </div>
 
-<div class="container mt-1">
-  <h3 class="question-style">2. Why did you choose DevOps?</h3>
+  <div class="container mt-1">
+    <h3 class="question-style">2. Why did you choose DevOps?</h3>
     <p>
       I chose DevOps because it bridges the gap between development and operations,
       allowing me to work across the entire software delivery lifecycle — from coding
@@ -61,7 +61,149 @@
         better communication, and faster delivery."
       </p>
     </div>
-</div>
+  </div>
 
 </div>
-<div *ngIf="selectedTab !== 'D'"></div>
+<div *ngIf="selectedTab === 'N'">
+  <div class="container mt-4">
+    <div class="container main-img d-flex justify-content-center">
+    <img src="assets/images/NGINX.png" alt="">
+  </div>
+    <h3 class="question-style">1. What is Nginx?</h3>
+    <p>
+      <span class="highlight">Nginx</span> (pronounced "engine-x") is a high-performance, open-source web server
+      software
+      that is also widely used as a:
+    </p>
+    <ul>
+      <li><span class="highlight">Reverse Proxy</span></li>
+      <li><span class="highlight">Load Balancer</span></li>
+      <li><span class="highlight">HTTP Cache</span></li>
+      <li><span class="highlight">API Gateway</span></li>
+    </ul>
+    <h2><span class="emoji">🔧</span>What Can Nginx Do?</h2>
+
+    <table>
+      <tr>
+        <th>Use Case</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>Web Server</td>
+        <td>Serves static content (HTML, CSS, JS, images) directly to users.</td>
+      </tr>
+      <tr>
+        <td>Reverse Proxy</td>
+        <td>Forwards client requests to backend servers (e.g., Node.js, Flask, Django) and returns the response to the
+          client.</td>
+      </tr>
+      <tr>
+        <td>Load Balancer</td>
+        <td>Distributes incoming traffic across multiple servers to improve performance and reliability.</td>
+      </tr>
+      <tr>
+        <td>SSL Termination</td>
+        <td>Handles HTTPS/SSL encryption/decryption to offload that work from backend apps.</td>
+      </tr>
+      <tr>
+        <td>Caching</td>
+        <td>Caches static or dynamic content to reduce load on backend servers.</td>
+      </tr>
+    </table>
+    <h2><span class="emoji">🔍</span>Why Is It Popular?</h2>
+    <ul>
+      <li>Handles <span class="highlight">high concurrency</span> with low memory usage (event-driven, non-blocking
+        architecture).</li>
+      <li><span class="highlight">Faster</span> than traditional servers like Apache in many use cases.</li>
+      <li>Used by many high-traffic websites like Netflix, Dropbox, and WordPress.com.</li>
+    </ul>
+
+    <h2><span class="emoji">🛠️</span>Example Use</h2>
+
+    <div class="code-block">
+      nginx<br>
+      server {{ '{' }}<br>
+      listen 80;<br>
+      server_name example.com;<br><br>
+      location / {{ '{' }}<br>
+      proxy_pass <a href="http://localhost:5000">http://localhost:5000</a>;# Pass requests to Flask app<br>
+      {{ '}' }}<br>
+      {{ '}' }}
+    </div>
+
+
+    <h3><span class="emoji">ℹ️</span>In Short:</h3>
+    <p>
+      <span class="highlight">Nginx</span> = Fast + Lightweight + Versatile Web/Proxy Server.
+    </p>
+
+    <p class="checkmark">✅ Step-by-Step: Deploy Angular with Nginx</p>
+
+    <p class="step-title">1. Build the Angular app</p>
+    <p>In your Angular project root:</p>
+
+    <div class="code-block">
+      bash<br>
+      ng build --configuration production
+    </div>
+    <p>This creates a <code>dist/your-app-name/</code> folder with the production-ready static files.</p>
+
+    <p class="step-title">2. Install Nginx</p>
+    <p>On Ubuntu/Debian:</p>
+
+    <div class="code-block">
+      bash<br>
+      sudo apt update<br>
+      sudo apt install nginx
+    </div>
+
+    <p class="step-title">3. Copy build files to Nginx web root</p>
+
+    <div class="code-block">
+      bash<br>
+      sudo cp -r dist/your-app-name/* /var/www/html/
+    </div>
+
+    <p>Or to a custom directory like <code>/var/www/my-angular-app/</code>.</p>
+
+     <p class="step-title">4. Configure Nginx</p>
+  <p>Edit the config:</p>
+  <div class="code-block">
+bash<br>
+sudo nano /etc/nginx/sites-available/default
+  </div>
+
+  <p>Replace with something like:</p>
+  <div class="code-block">
+nginx<br>
+server {{ '{' }}<br>
+listen 80;<br>
+server_name yourdomain.com;<br><br>
+root /var/www/html;<br>
+index index.html;<br><br>
+location / {{ '{' }}<br>
+try_files $uri $uri/ /index.html;<br>
+{{ '}'}}<br>
+{{ '}'}}
+  </div>
+
+  <p><span class="highlight">try_files</span> is important for Angular’s <span class="highlight">HTML5 routing</span> (e.g., /dashboard, /profile).</p>
+
+  <p class="step-title">5. Restart Nginx</p>
+  <div class="code-block">
+bash<br>
+sudo systemctl restart nginx
+  </div>
+
+  <p><span class="emoji">🌐</span><strong>Now your Angular app is live at:</strong></p>
+  <p>
+    <a href="http://your-server-ip" target="_blank">http://your-server-ip</a> or 
+    <a href="http://yourdomain.com" target="_blank">http://yourdomain.com</a>
+  </p>
+  </div>
+</div>
+<div *ngIf="selectedTab === 'G'">
+  <div class="container mt-4">
+    <h3 class="question-style">1. What is Client vs Server Application?</h3>
+  </div>
+</div>
