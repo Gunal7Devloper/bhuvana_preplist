@@ -1,6 +1,7 @@
 <div class="container d-flex my-2 gap-2">
   <div class="btn btn-primary" (click)="opencontent('D')">Devops</div>
   <div class="btn btn-secondary" (click)="opencontent('N')">Nginix</div>
+  <div class="btn btn-warning" (click)="opencontent('DC')">Docker</div>
   <div class="btn btn-info" (click)="opencontent('G')">Generic</div>
 </div>
 <div *ngIf="selectedTab === 'D'">
@@ -67,8 +68,8 @@
 <div *ngIf="selectedTab === 'N'">
   <div class="container mt-4">
     <div class="container main-img d-flex justify-content-center">
-    <img src="assets/images/NGINX.png" alt="">
-  </div>
+      <img src="assets/images/NGINX.png" alt="">
+    </div>
     <h3 class="question-style">1. What is Nginx?</h3>
     <p>
       <span class="highlight">Nginx</span> (pronounced "engine-x") is a high-performance, open-source web server
@@ -166,44 +167,115 @@
 
     <p>Or to a custom directory like <code>/var/www/my-angular-app/</code>.</p>
 
-     <p class="step-title">4. Configure Nginx</p>
-  <p>Edit the config:</p>
-  <div class="code-block">
-bash<br>
-sudo nano /etc/nginx/sites-available/default
-  </div>
+    <p class="step-title">4. Configure Nginx</p>
+    <p>Edit the config:</p>
+    <div class="code-block">
+      bash<br>
+      sudo nano /etc/nginx/sites-available/default
+    </div>
 
-  <p>Replace with something like:</p>
-  <div class="code-block">
-nginx<br>
-server {{ '{' }}<br>
-listen 80;<br>
-server_name yourdomain.com;<br><br>
-root /var/www/html;<br>
-index index.html;<br><br>
-location / {{ '{' }}<br>
-try_files $uri $uri/ /index.html;<br>
-{{ '}'}}<br>
-{{ '}'}}
-  </div>
+    <p>Replace with something like:</p>
+    <div class="code-block">
+      nginx<br>
+      server {{ '{' }}<br>
+      listen 80;<br>
+      server_name yourdomain.com;<br><br>
+      root /var/www/html;<br>
+      index index.html;<br><br>
+      location / {{ '{' }}<br>
+      try_files $uri $uri/ /index.html;<br>
+      {{ '}'}}<br>
+      {{ '}'}}
+    </div>
 
-  <p><span class="highlight">try_files</span> is important for Angular’s <span class="highlight">HTML5 routing</span> (e.g., /dashboard, /profile).</p>
+    <p><span class="highlight">try_files</span> is important for Angular’s <span class="highlight">HTML5 routing</span>
+      (e.g., /dashboard, /profile).</p>
 
-  <p class="step-title">5. Restart Nginx</p>
-  <div class="code-block">
-bash<br>
-sudo systemctl restart nginx
-  </div>
+    <p class="step-title">5. Restart Nginx</p>
+    <div class="code-block">
+      bash<br>
+      sudo systemctl restart nginx
+    </div>
 
-  <p><span class="emoji">🌐</span><strong>Now your Angular app is live at:</strong></p>
-  <p>
-    <a href="http://your-server-ip" target="_blank">http://your-server-ip</a> or 
-    <a href="http://yourdomain.com" target="_blank">http://yourdomain.com</a>
-  </p>
+    <p><span class="emoji">🌐</span><strong>Now your Angular app is live at:</strong></p>
+    <p>
+      <a href="http://your-server-ip" target="_blank">http://your-server-ip</a> or
+      <a href="http://yourdomain.com" target="_blank">http://yourdomain.com</a>
+    </p>
   </div>
 </div>
 <div *ngIf="selectedTab === 'G'">
   <div class="container mt-4">
     <h3 class="question-style">1. What is Client vs Server Application?</h3>
+  </div>
+</div>
+<div *ngIf="selectedTab === 'DC'">
+  <div class="container main-img d-flex justify-content-center">
+    <img src="assets/images/docker1.png" alt="">
+  </div>
+  <div class="container mt-4">
+    <h3 class="question-style">1. What is Docker?</h3>
+    <p>
+      <b>Docker</b> is an open-source platform used to develop, ship, and run applications in <b>lightweight, portable
+        containers.</b>
+    </p>
+    <p>
+      🔹 In Simple Terms:
+      Docker packages your application <b>along with everything it needs</b> (code, libraries, dependencies, system
+      tools) into
+      a single <b>container</b>
+      that can run <b>anywhere</b>—on your machine, in testing, or in production.
+    </p>
+    <h3>Key Concepts:</h3>
+    <p>
+      Container: A lightweight, standalone, and executable unit that includes all application dependencies.
+
+      Image: A read-only template used to create containers (like a blueprint).
+
+      Dockerfile: A script with instructions to build a Docker image.
+
+      Docker Hub: A cloud-based registry where Docker images can be stored and shared.
+    </p>
+
+    <div class="container main-img d-flex justify-content-center">
+      <img src="assets/images/docker2.png" alt="">
+    </div>
+    <h2>What is Docker? – Interview Answer</h2>
+
+    <div class="highlight">
+      <strong>Beginner to Intermediate Answer:</strong>
+    </div>
+    <p>
+      Docker is a platform that allows developers to package applications into containers—lightweight, portable units
+      that include everything the application needs to run. These containers can be run consistently across any
+      environment, whether it's development, testing, or production. Docker helps eliminate environment-related issues
+      and simplifies deployment. I’ve used Docker to containerize Angular frontends and Spring Boot backends, ensuring
+      they work the same on every machine.
+    </p>
+
+    <div class="highlight">
+      <strong>Advanced Answer (With Technical Depth):</strong>
+    </div>
+    <p>
+      Docker uses containerization to isolate applications and their dependencies from the host system. A Docker image
+      is built from a <code>Dockerfile</code>, which defines how the container is set up. The container runs from that
+      image and can be deployed on any system that has Docker installed. I’ve used <code>docker-compose</code> to manage
+      multi-container applications—for example, running Angular, a Spring Boot API, and PostgreSQL database together
+      during development and testing.
+    </p>
+
+    <h3>Tips for Answering:</h3>
+    <ul>
+      <li>Tailor the answer to your project experience (e.g., Angular + Spring Boot + PostgreSQL).</li>
+      <li>Mention tools you’ve used: <code>Dockerfile</code>, <code>docker-compose</code>, <code>Docker Hub</code>.</li>
+      <li>Be ready to explain:
+        <ul>
+          <li>How you build a Docker image</li>
+          <li>How you run a container</li>
+          <li>How Docker helps in CI/CD or DevOps workflows</li>
+        </ul>
+      </li>
+    </ul>
+
   </div>
 </div>
