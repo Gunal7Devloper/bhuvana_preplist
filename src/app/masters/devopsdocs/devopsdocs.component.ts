@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DockerComponent } from '../docker/docker.component';
 
 @Component({
   selector: 'app-devopsdocs',
@@ -9,8 +10,10 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./devopsdocs.component.scss'],
   imports: [
       CommonModule,
-      FormsModule
-    ]
+      FormsModule,
+      DockerComponent
+    ],
+    encapsulation: ViewEncapsulation.None
 })
 export class DevopsdocsComponent implements OnInit {
  
